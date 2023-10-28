@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wingify_UI_Assignment</title>
+    <link rel="stylesheet" href="assests/styles/popup.style.css">
+    <script src="./Utils/SetPage.js"></script>
+    <script src="./Utils//GetUserData.js"></script>
+    <script src="./Utils/ValidateUserData.js"></script>
+    <script src="./Utils/cookies/CreateCookie.js"></script>
+    <script src="./Utils/cookies/DeleteCookie.js"></script>
+    <script src="./Utils/cookies/GetCookie.js"></script>
+    <script src="./Utils/cookies/SetCookie.js"></script>
+    <script src="./Utils/StoreUserData.js"></script>
+
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            setPage()
+        }
+    </script>
+
+    <!--Pop Up Window-->
+    <div id="cookie-present"></div> <!-- if cookies are already present-->
+    <div id="popup" style='display:none'>
+        <div class='popup-content'>
+            <div class="close-btn" onclick="event.preventDefault();PopUp('hide');">&times;</div>
+            <div class="popup-section">
+                <div class="popup-form">
+                    <div class="heading">
+                        <div><b>GET $10 OFF WHEN YOU SIGN UP FOR </b></div>
+                        <div>SAVINGS,NEWS,UPDATES AND MORE</div>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="your name" class="data" id="user-name">
+                        <div id="user_name_error" class="error"></div>
+                    </div>
+                    <div>
+                        <input type="email" placeholder="email address" class="data" id="user-email">
+                        <div id="user_email_error" class="error"></div>
+
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="newsletter" name="newsletter" value="newsletter">
+                        <label for="newsletter"> Check this box to receive monthly newsletter.</label><br>
+                        <div id="newsletter_subscription_error" class="error"></div>
+
+                    </div>
+                    <div>
+                        <input type="button" value="SIGN UP" class="data btn" onclick="StoreData();">
+                    </div>
+                    <div class="privacy-link checkbox">
+                        PRIVACY POLICY
+                    </div>
+                </div>
+                <div class="popup-image">
+                    <img src="assests/images/big_christmas_sale_offer_image.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
